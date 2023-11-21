@@ -1,0 +1,12 @@
+python packages:
+  - HTSeq==0.9.1
+  - numpy==1.19.5
+  - pandas==1.1.5
+  - tqdm==4.63.1
+  - pyfasta==0.5.2
+  - scipy==1.5.4
+Other softwares:
+  - OptiType==1.3.1
+  - netMHCpan==4.0
+  - IPAFinder
+
