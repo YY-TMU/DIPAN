@@ -298,7 +298,6 @@ def compositeTranscript(rt_te_composite):
                     filtered_transcript_len_df = filtered_transcript_df.loc[:,["transcript_id","len"]].groupby(by=["transcript_id"]).sum()
                     filtered_transcript = filtered_transcript_len_df["len"].idxmax()
                                                                
-#                 for filtered_transcript in filtered_transcripts:
                 # up exon
                 up_exon = transcript_up_exon_dic[filtered_transcript]
                 # exon of transcript
@@ -838,7 +837,6 @@ def skipTranscript(rt_te_skip):
                 filtered_transcript_len_df = filtered_transcript_df.loc[:,["transcript_id","len"]].groupby(by=["transcript_id"]).sum()
                 filtered_transcript = filtered_transcript_len_df["len"].idxmax() 
             
-#             for filtered_transcript in filtered_transcripts:
             # up exon
             up_exon = transcript_up_exon_dic[filtered_transcript]
             # exon of transcript
