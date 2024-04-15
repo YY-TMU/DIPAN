@@ -22,7 +22,7 @@ conda activate DIPAN
 netMHCpan can only be acquired through the official website and it should be added to the environment variable.
 - [netMHCpan](https://services.healthtech.dtu.dk/services/NetMHCpan-4.0/)
 
-OptiType relies on Python 2.7. Due to compatibility issues with other scripts, it should be manually installed according to the instrument.
+OptiType relies on Python 2.7. Due to compatibility issues with other scripts, it should be manually installed according to the instruction.
 - [OptiType](https://github.com/FRED-2/OptiType)
 
 ## DIPAN options
