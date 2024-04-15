@@ -3,20 +3,20 @@
 set -e
 print_help() {
   echo "Summary: Recognize neoantigens from IPA events in tumor."
-  echo "Usage:   $0 -a <IPAFinder_anno.txt> -b <bamfiles.txt> -f <fqfiles.txt> -n <normal_proteome.fa> -g <refseq.gtf> -G <genome.fa> -o <output_dir> -optitype_script <OptiTypePipeline.py> -optitype_config <optitype.config>"
+  echo "Usage:   $0 -a <IPAFinder_anno.txt> -f <bam_fq_input.txt> -n <Normal_proteome.fa> -g <refseq.gtf> -G <genome.fa> -o <output_dir> -optitype_script <OptiTypePipeline.py> -optitype_config <optitype.config>"
   echo
   echo "Options:"
-  printf "%-35s %-s\n"  "-a, -annotated_finder"  "Annotation file containing intron and exon information."
+  printf "%-35s %-s\n"  "-a, -annotated_finder"  "Annotation file containing intron and exon information from IPAFinder."
   printf "%-35s %-s\n"  "-b, -bam_hla_input"  "File containing BAM file paths and related HLA typing information."
   printf "%-35s %-s\n"  "-f, -bam_fq_input"  "File containing BAM file paths and related FASTQ paths."
   printf "%-35s %-s\n"  "-n, -normal_proteome"  "Amino acid sequences in the normal proteome."
-  printf "%-35s %-s\n"  "-g, -annotated_gtf"  "GTF file with annotated transcripts."
+  printf "%-35s %-s\n"  "-g, -annotated_gtf"  "GTF file with annotated transcripts (RefSeq)."
   printf "%-35s %-s\n"  "-G, -genome_fasta"  "Genome in fasta format."
-  printf "%-35s %-s\n"  "-t, --rank_threshold"  "Set the rank threshold for high binding peptides."
-  printf "%-35s %-s\n"  "-m, --matched_normal"  "Specify whether there are matched normal samples. If False, IPA-derived peptides commonly found in TCGA normal samples are used."
+  printf "%-35s %-s\n"  "-t, --rank_threshold"  "Set the rank threshold for high binding peptides. [default=2]"
+  printf "%-35s %-s\n"  "-m, --matched_normal"  "Specify whether there are matched normal samples. If False, IPA-derived peptides commonly found in normal samples are used. [default=True]"
   printf "%-35s %-s\n"  "-o, -output_dir"  "Output directory."
   printf "%-35s %-s\n"  "-optitype_script"  "The path to OptiTypePipeline.py."
-  printf "%-35s %-s\n"  "-optitype_config"  "Configuration file of OptiTypePipeline.py."
+  printf "%-35s %-s\n"  "-optitype_config"  "Configuration file of OptiType."
   printf "%-35s %-s\n"  "-h, -help"  "Print this help menu."
 }
 
@@ -338,11 +338,8 @@ do
         --save_file $filter_result_file
 done
 
-# delete
+# delete intermediate file
 rm -r $save_dir/1.IPA_result
 rm -r $save_dir/2.IPA_filter
 rm -r $save_dir/3.IPA_gtf
 rm -r $save_dir/4.IPA_netMHC
-
-
-
