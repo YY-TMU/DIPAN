@@ -4,7 +4,7 @@
 DIPAN is designed to identify neoantigens originating from intronic polyadenylation (IPA) events detected in tumor transcriptomes. These IPA-derived neoantigens have the potential to be presented by the MHC I molecules.
 
 ## Installation
-DIPAN incorporates Python and Bash scripts. To set up the required environment, use the provided `environment.yaml` file to create a conda virtual environment.
+DIPAN incorporates Python and Bash scripts. To set up the required environment, use the provided `environment.yml` file to create a conda virtual environment.
 
 1. Clone the repository:
 ```
