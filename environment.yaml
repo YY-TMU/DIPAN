@@ -12,3 +12,4 @@ dependencies:
   - pip
   - pip:
     - scipy==1.5.4
+    - .
