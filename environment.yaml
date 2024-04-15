@@ -9,4 +9,6 @@ dependencies:
   - pandas==1.1.5
   - numpy==1.19.5
   - pyfasta==0.5.2
-  - scipy==1.5.4
+  - pip
+  - pip:
+    - scipy==1.5.4
