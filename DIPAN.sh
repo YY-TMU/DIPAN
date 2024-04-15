@@ -139,7 +139,7 @@ if [[ -f "$bam_hla_input" ]]; then
         [[ -d $sample_dir ]] || mkdir $sample_dir
         tmp_pt=${sample_dir}/tmp.txt
         echo condition1=$pt > $tmp_pt
-        python script/IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
+        python IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
         tumor_ipa_pts="${tumor_ipa_pts} ${sample_dir}/IPAFinder_IPUI.txt"  
         rm $tmp_pt
         hla_types=$(echo $hla_types | sed 's/*//g')
@@ -159,7 +159,7 @@ if [[ -f "$bam_hla_input" ]]; then
             [[ -d $sample_dir ]] || mkdir $sample_dir
             tmp_pt=${sample_dir}/tmp.txt
             echo condition2=$pt > $tmp_pt
-            python script/IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
+            python IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
             normal_ipa_pts="${normal_ipa_pts} ${sample_dir}/IPAFinder_IPUI.txt"
             rm $tmp_pt
         done < <(grep "Normal" $bam_hla_input)
@@ -180,7 +180,7 @@ elif [[ -f $bam_fq_input ]]; then
         [[ -d $sample_dir ]] || mkdir $sample_dir
         tmp_pt=${sample_dir}/tmp.txt
         echo condition1=$pt > $tmp_pt
-        python script/IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
+        python IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
         tumor_ipa_pts="${tumor_ipa_pts} ${sample_dir}/IPAFinder_IPUI.txt"  
         rm $tmp_pt
         fq_dict[$sample]=${fq_pts}
@@ -199,7 +199,7 @@ elif [[ -f $bam_fq_input ]]; then
             [[ -d $sample_dir ]] || mkdir $sample_dir
             tmp_pt=${sample_dir}/tmp.txt
             echo condition2=$pt > $tmp_pt
-            python script/IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
+            python IPAFinder_DetectIPA.py -b $tmp_pt -anno $IPAFinder_anno -p $process -o ${sample_dir}/IPAFinder_IPUI.txt
             normal_ipa_pts="${normal_ipa_pts} ${sample_dir}/IPAFinder_IPUI.txt"
             rm $tmp_pt
         done < <(grep "Normal" $bam_fq_input)
@@ -255,13 +255,13 @@ do
     [[ -d $sample_dir ]] || mkdir $sample_dir
     gtf_file=${sample_dir}/${sample}.gtf
     # assemble transcript
-    python script/build_transcript.py \
+    python build_transcript.py \
         --finder_pa_file $pt \
         --annotated_gtf $annotated_gtf_pt \
         --fa_path $genome_fasta_pt \
         --save_file $gtf_file
     # extract sequence
-    python script/extract_sequence.py \
+    python extract_sequence.py \
         --gtf_pt $gtf_file \
         --genome_fa_pt $genome_fasta_pt \
         --save_dir $sample_dir
@@ -330,7 +330,7 @@ do
     # filter peptides
     awk '!/#/ && $2~/HLA-/' $netMHC_result_pts | awk -v rt=$rank_threshold '{if($13<rt) print $0}' | awk '{gsub(/<= *SB/, "<=SB"); gsub(/<= *WB/, "<=WB"); print}' >> $filter_result_file
     # filter with normal proteome
-    python script/filter_normal_proteome.py \
+    python filter_normal_proteome.py \
         --normal_proteome_fa $normal_proteome_pt \
         --peptide_file $filter_result_file \
         --ipa_annotation_file $ipa_info \
