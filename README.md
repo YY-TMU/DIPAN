@@ -36,7 +36,7 @@ The following options are avaliable:
 - --rank_threshold/-t: Set the rank threshold for high binding peptides. [default=2]
 - --matched_normal/-m: Specify whether there are matched normal samples. If False, IPA-derived peptides found in normal samples are used. [default=True]
 - --output_dir/-o: Output directory.
-- --optitype_script: The path to OptiTypePipeline.py.
+- --optitype_script: The path to 'OptiTypePipeline.py'.
 - --optitype_config: Configuration file of OptiType.
 
 
