@@ -73,14 +73,11 @@ We collected 730 normal samples from TCGA and curated a list of IPA-derived pept
 The final output includes filtered neoantigens from tumor samples, and the output consists of the following columns:
 Column | Description
 ------ | -----------
-SYMBOL | gene symbol
-Terminal_exon | genomic location of corresponding terminal exon of IPA isoform
-IPAtype | type of terminal exon (Skipped or Composite)
-IPUI | abundance of IPA events
+SYMBOL | Gene symbol
+Terminal_exon | Genomic location of corresponding terminal exon of IPA isoform
+IPAtype | Type of terminal exon (Skipped or Composite)
+IPUI | Abundance of IPA events
 HLA | HLA-I typing
 Peptide | Amino acid sequence of the potential IPA-derived neoantigens
-Core | The minimal 9 amino acid binding core directly in contact with the MHC.
 %Rank | Rank of the predicted binding score compared to a set of random natural peptides. This measure is not affected by inherent bias of certain molecules towards higher or lower mean predicted affinities.
-
-
 
