@@ -108,7 +108,8 @@ done
 [ -f "$annotated_gtf_pt" ] || { echo "Error: Invalid annotated_gtf!"; exit 1; }
 [ -f "$genome_fasta_pt" ] || { echo "Error: Invalid genome_fasta!"; exit 1; }
 if ! command -v netMHCpan > /dev/null; then
-    echo "Error:netMHCpan is not avaliable!"
+    echo "Error: netMHCpan is not avaliable!"
+    exit 1
 fi
 if [ -f "$bam_fq_input" ]  && [ -f "$optitype_script_pt" ] && [ -f "$optitype_config_pt" ] && [ -z "$bam_hla_input" ] ; then
     echo "OptiType will be used to calculate HLA typing."
