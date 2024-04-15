@@ -84,7 +84,7 @@ unique_mhc_result_df = pd.merge(left = ipa_annotation_df,
                                 left_on = "IPA_trans",
                                 right_on = "Identity")
 unique_mhc_result_df = unique_mhc_result_df.sort_values(by = ["%Rank"])
-unique_mhc_result_df = unique_mhc_result_df.loc[:,["SYMBOL","Terminal_exon","IPAtype","IPUI","HLA","Peptide","Core","%Rank"]]
+unique_mhc_result_df = unique_mhc_result_df.loc[:,["SYMBOL","Terminal_exon","IPAtype","IPUI","HLA","Peptide","%Rank"]]
 unique_mhc_result_df.to_csv(save_file,sep="\t",index=False,header=True)
 log.info("Save %s" % save_file)
 
