@@ -58,6 +58,7 @@ bam_fq_input.txt contains paths of BAM file and related FASTQ file, as shown bel
 Tumor  /path/tumor.sorted.bam  /path/tumor_1.fq,/path/tumor_2.fq
 Normal /path/normal.sorted.bam   
 ```
+
 ### 3. Known HLA typing
 ```
 DIPAN.sh -a <IPAFinder_anno.txt> -b <bam_hla_input.txt> -n <Normal_proteome.fa> -g <refseq.gtf> -G <genome.fa> -o <output_dir>
