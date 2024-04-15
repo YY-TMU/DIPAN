@@ -13,7 +13,7 @@ print_help() {
   printf "%-35s %-s\n"  "-g, -annotated_gtf"  "GTF file with annotated transcripts (RefSeq)."
   printf "%-35s %-s\n"  "-G, -genome_fasta"  "Genome in fasta format."
   printf "%-35s %-s\n"  "-t, --rank_threshold"  "Set the rank threshold for high binding peptides. [default=2]"
-  printf "%-35s %-s\n"  "-m, --matched_normal"  "Specify whether there are matched normal samples. If False, IPA-derived peptides commonly found in normal samples are used. [default=True]"
+  printf "%-35s %-s\n"  "-m, --matched_normal"  "Specify whether there are matched normal samples. If False, IPA-derived peptides found in normal samples are used. [default=True]"
   printf "%-35s %-s\n"  "-o, -output_dir"  "Output directory."
   printf "%-35s %-s\n"  "-optitype_script"  "The path to OptiTypePipeline.py."
   printf "%-35s %-s\n"  "-optitype_config"  "Configuration file of OptiType."
