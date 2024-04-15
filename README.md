@@ -1,10 +1,10 @@
 # DIPAN
 
 ## Description
-DIPAN searches for neoantigens derived from intronic polyadenylation events found in tumor transcriptomes. We show that the neoantigens could be presented by the MHC I complex using mass spectrometry data.
+DIPAN is designed to identify neoantigens originating from intronic polyadenylation (IPA) events detected in tumor transcriptomes. These IPA-derived neoantigens have the potential to be presented by the MHC I complex and detected using mass spectrometry data.
 
 ## Installation
-This pipeline includes both Python and Bash scripts. A conda virtual environment can be created using the provided `environment.yaml` file.
+DIPAN incorporates Python and Bash scripts. To set up the required environment, use the provided `environment.yaml` file to create a conda virtual environment.
 
 1. Clone the repository:
 ```
@@ -17,10 +17,11 @@ conda env create -f environment.yaml
 conda activate DIPAN
 ```
 
-3.Due to permission and compatibility issues, the following software needs to be installed manually and added to the PATH environment variable.
+3. netMHCpan and OptiType
+Due to permission issues, netMHCpan can only be acquired through the official website and it should be added to the environment variable.
 - [netMHCpan](https://services.healthtech.dtu.dk/services/NetMHCpan-4.0/)
+OptiType relies on Python 2.7. Due to compatibility issues with other scripts, it should be manually installed according to the instrument.
 - [OptiType](https://github.com/FRED-2/OptiType)
-
 
 
 ## Usage
