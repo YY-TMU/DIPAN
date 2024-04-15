@@ -13,7 +13,7 @@ git clone https://github.com/YY-TMU/DIPAN.git
 
 2. Create the environment:
 ```
-conda env create -f environment.yml
+conda env create -f environment.yaml
 conda activate DIPAN
 ```
 
