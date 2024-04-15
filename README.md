@@ -41,7 +41,7 @@ The following options are avaliable:
 
 
 ## Usage
-### 1.Input files
+### 1.Input
 We provided the annotation file of IPAFinder for GRCh38, along with normal proteome amino acid sequences in `annotated_file` directory, and we recommend that users utilize it directly. The annotation file for GRCh38 of RefSeq can be downloaded from [UCSC](https://hgdownload.soe.ucsc.edu/goldenPath/archive/hg38/ncbiRefSeq/109.20211119/hg38.109.20211119.ncbiRefSeq.gtf.gz). It should be noted that the annotation file of IPAFinder must match the GTF file; if the GTF file is changed, the annotation file should be adjusted accordingly for [IPAFinder](https://github.com/ZhaozzReal/IPAFinder).
 
 DIPAN offers two options for users. If HLA-I typing information is unavailable, users should provide `bam_fq_input`, `optitype_script` and `optitype_config`. OptiType is used to calculate HLA typing. `bam_fq_input` should include paths to BAM files and their corresponding FASTQ files. Alternatively, if HLA typing is already known, users should provide `bam_hla_input`, which includes paths to BAM files along with their associated HLA typing information.
